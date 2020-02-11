@@ -8,16 +8,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 var app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-var port = process.env.PORT || 3000;
-const router = express.Router();
-router.get('/', function(req, res) {
-  res.json({message: 'API in Online!'});
-});
-
-console.log("Hello World");
-
 /**
  * chatRoom object allowing users to communicate and save
  * conversation
@@ -28,7 +18,6 @@ class ChatRoom {
       this.logger = null;
   }
 
-
 /**
  * return current number of users in the chatroom
  * @return {int} numUsers
@@ -36,7 +25,6 @@ class ChatRoom {
  getNumUsers() {
     return this.numUsers;
   }
-
 
 /**
  * set current users in chatroom
@@ -46,13 +34,11 @@ class ChatRoom {
     this.numUsers = i;
   }
 
-
 /**
  * prompt the user for new message
  * @throws will throw error if error occurs asking for prompt
  *
  */
-
   askForMessage() {
     prompt.start();
     prompt.get(['message'], function (err, result){
@@ -67,18 +53,29 @@ class ChatRoom {
     return result.message;
     });
   }
-
-
-
 }
 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+var port = process.env.PORT || 3000;
 
-let c = new ChatRoom();
-console.log(c.getNumUsers());
+const router = express.Router();
 
+router.get('/', function(req, res, next) {
+  res.json({message: 'API in Online!'});
+});
 
 app.use('/', router);
+
+router.route('/bears')
+  .post(function(req,res){
+    var c = new ChatRoom();
+
+  })
+
 app.listen(port);
 console.log('server online at: ' + port);
 
+let c = new ChatRoom();
+console.log(c.getNumUsers());
 console.log(c.askForMessage());
