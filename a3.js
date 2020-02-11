@@ -50,8 +50,10 @@ class ChatRoom {
 /**
  * prompt the user for new message
  * @throws will throw error if error occurs asking for prompt
- *  */
-  askForMessage(){
+ *
+ */
+
+  askForMessage() {
     prompt.start();
     prompt.get(['message'], function (err, result){
 
@@ -62,6 +64,7 @@ class ChatRoom {
     var d = new Date().toString().substring(16,21);
 
     console.log(d + " > " + result.message);
+    return result.message;
     });
   }
 
@@ -78,4 +81,4 @@ app.use('/', router);
 app.listen(port);
 console.log('server online at: ' + port);
 
-c.askForMessage();
+console.log(c.askForMessage());
