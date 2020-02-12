@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f2d7f83b-d06b-4175-8a5c-d22e496b82ff" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../react_proj/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../react_proj/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react_proj/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../react_proj/package.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1XiqZKRPP4CQx94cMgUwW7CTBBj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2d7f83b-d06b-4175-8a5c-d22e496b82ff" name="Default Changelist" comment="" />
+      <created>1581539317083</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581539317083</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="207" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581540580689">
+      <screen x="0" y="33" width="1920" height="1047" />
+    </state>
+    <state x="414" y="207" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1581540580689" />
+    <state x="975" y="206" width="530" height="605" key="FileChooserDialogImpl" timestamp="1581540909821">
+      <screen x="0" y="33" width="1920" height="1047" />
+    </state>
+    <state x="975" y="206" width="530" height="605" key="FileChooserDialogImpl/0.33.1920.1047@0.33.1920.1047" timestamp="1581540909821" />
+    <state x="325" y="103" width="1269" height="912" key="SettingsEditor" timestamp="1581540804801">
+      <screen x="0" y="33" width="1920" height="1047" />
+    </state>
+    <state x="325" y="103" width="1269" height="912" key="SettingsEditor/0.33.1920.1047@0.33.1920.1047" timestamp="1581540804801" />
+    <state x="544" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1581539331944">
+      <screen x="0" y="33" width="1920" height="1047" />
+    </state>
+    <state x="544" y="345" key="com.intellij.ide.util.TipDialog/0.33.1920.1047@0.33.1920.1047" timestamp="1581539331944" />
+    <state x="0" y="33" width="848" height="1047" key="find.popup" timestamp="1581540656354">
+      <screen x="0" y="33" width="1920" height="1047" />
+    </state>
+    <state x="0" y="33" width="848" height="1047" key="find.popup/0.33.1920.1047@0.33.1920.1047" timestamp="1581540656354" />
+  </component>
+</project>
