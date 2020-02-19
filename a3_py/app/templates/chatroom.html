@@ -1,24 +1,28 @@
 {% extends 'skeleton.html' %}
 
-{% block content %}
-    <h1>chatroom</h1>
-    {% with msgs = form.all_messages %}
-        {% if msgs.length != 0 %}
-            {% for msg in msgs %}
-                {% if msg is not none %}
-                    <p>{{form.get_time()}} > {{msg}}</p>
-                {% endif %}
-            {% endfor %}
-        {% endif %}
+<div style="border:1px solid black">
+    {% block content %}
+        <h1>{{name}}</h1>
+        {% with msgs = chat %}
+            {% if msgs.length != 0 %}
+                {% for msg in msgs[name] %}
+                    {% if msg is not none %}
+                        <ul style="list-style-type:none">
+                        <li >> {{msg}}</li>
+                        </ul>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
 
-    {% endwith %}
+        {% endwith %}
 
-{% endblock %}
+    {% endblock %}
+</div>
 
 {% block input %}
     <form method="post" novalidate>
         <p>
-            {{form.message(size=32)}}
+            {{form.message(size=32, value="")}}
         </p>
         <p>{{form.send()}}</p>
 

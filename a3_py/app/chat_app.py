@@ -1,35 +1,41 @@
 from flask import Flask
-from flask import render_template, flash, redirect
+from flask import render_template, redirect, flash
 from chatroom import ChatForm
-
+from index import CreateRoomForm
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'a'
 
 
+chat_logs = dict()
+
+
 @app.route('/')
-@app.route('/index')
+@app.route('/index', methods=['GET', 'POST'])
 def index():
-    user = {'username': 'Bro'}
-    posts = [
-        {
-            'author': {'username': 'John'},
-            'body': 'eyo'
-        }
-    ]
-    return render_template('index.html', title='home', user=user, posts=posts)
+
+    form = CreateRoomForm()
+    flash("test flash")
+    if form.room_name.data in form.rooms:
+        flash("already exists")
+    else:
+        if form.room_name.data not in ("", None):
+            form.rooms.append(form.room_name.data)
+    print(form.rooms)
+    return render_template('index.html', title='Home', form=form)
 
 
-@app.route('/chatroom/', methods=['GET', 'POST'])
-def chatroom():
+@app.route('/chatroom/<name>', methods=['GET', 'POST'])
+def chatroom(name):
     form = ChatForm()
 
-    # if form.validate_on_submit():
-    print(form.message.data)
-    form.all_messages.append(form.message.data)
-    #     return redirect('/chatroom/')
+    if form.message.data not in ("", None):
+        form.all_messages.append(form.message.data)
+    redirect('/chatroom/<name>')
 
-    # form.saveText(form.message.data)
-    return render_template('chatroom.html', title='chatroom', form=form)
+    chat_logs[name] = form.all_messages
+
+    print(chat_logs[name])
+    return render_template('chatroom.html', title='Chatroom: ' + name, form=form, name=name, chat=chat_logs)
 
 
 

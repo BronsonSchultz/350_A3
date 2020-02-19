@@ -7,12 +7,15 @@
     <body>
         <nav><a href='/index'>All rooms</a></nav>
 
-        <div>
-            {% block content %}{% endblock %}
-        </div>
+        {% block content %}{% endblock %}
 
         <div>
             {% block input %}{% endblock %}
         </div>
+
+        {%for message in get_flashed_messages() %}
+        <p style="color:red">{{message}}</p>
+        {% endfor %}
+
     </body>
 </html>

@@ -1,13 +1,10 @@
 from wtforms import StringField, SubmitField
 from flask_wtf import FlaskForm
-from wtforms.validators import DataRequired
-import time
+
 
 class ChatForm(FlaskForm):
+    name = ''
+    chat = dict()
     all_messages = list()
-
-    message = StringField("your message", validators=[DataRequired()])
+    message = StringField("your message")
     send = SubmitField("Send")
-
-    def get_time(self):
-        return time.asctime()[11:16]
