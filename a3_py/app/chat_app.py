@@ -6,21 +6,27 @@ app = Flask(__name__)
 app.config['SECRET_KEY'] = 'a'
 
 
-chat_logs = dict()
+log = dict()
+def get_room_msgs(dic, name):
+    if name not in dic:
+        dic[name] = list()
+    return dic[name]
 
+def set_room_msgs(dic, name, l):
+    if name not in dic:
+        dic[name] = list()
+    dic[name].append(l)
 
 @app.route('/')
 @app.route('/index', methods=['GET', 'POST'])
 def index():
 
     form = CreateRoomForm()
-    flash("test flash")
     if form.room_name.data in form.rooms:
         flash("already exists")
     else:
         if form.room_name.data not in ("", None):
             form.rooms.append(form.room_name.data)
-    print(form.rooms)
     return render_template('index.html', title='Home', form=form)
 
 
@@ -28,14 +34,20 @@ def index():
 def chatroom(name):
     form = ChatForm()
 
+
+
     if form.message.data not in ("", None):
         form.all_messages.append(form.message.data)
+
+    print(form.all_messages)
+    set_room_msgs(log, name, form.message.data)
     redirect('/chatroom/<name>')
 
-    chat_logs[name] = form.all_messages
-
-    print(chat_logs[name])
-    return render_template('chatroom.html', title='Chatroom: ' + name, form=form, name=name, chat=chat_logs)
+    out = get_room_msgs(log, name)
+    print(log)
+    print(name)
+    print(out)
+    return render_template('chatroom.html', title='Chatroom: ' + name, form=form, name=name, out=out)
 
 
 
