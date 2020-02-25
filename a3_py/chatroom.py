@@ -3,7 +3,9 @@ from flask_wtf import FlaskForm
 
 
 class ChatForm(FlaskForm):
-    all_messages = list()
+    """
+    Flask form that allows user to send a message to a created chat room
+    """
     name = ""
     message = StringField("your message")
     send = SubmitField("Send")
